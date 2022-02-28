@@ -167,6 +167,6 @@ RHStringTransformWindow >> trhModelForString: aTRHModelForString [
 RHStringTransformWindow >> updateOutput: anObjectOrNil [
 
 	self textBoxForOutput 
-		text:	self trhModelForString contents.
+		text:	self trhModelForString value.
 
 ]
