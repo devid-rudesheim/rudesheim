@@ -10,38 +10,60 @@ RHExampleShape class >> draw [
 	|
 		storage
 		surfaceExtender
+		extent
+		
+		draw
 	|
 
+	extent := 1920 @ 1024.
 	storage := FileLocator home / 'tmp'.
 	storage asFileReference ensureCreateDirectory.
 	
+	draw :=
+	[ :surface |
+		surface
+			drawDuring:
+			[ :canvas |
+				surface
+					clear:	Color black.
+
+				canvas pathTransform
+					scaleBy: 		0.5 * extent;
+					translateBy: 	( 1 @ 1 ).
+				
+				canvas
+					draw:	self.
+			].
+	].
+
 	[ :fileTraits |
 		surfaceExtender :=
 			RHFileSurfaceExtender	
-				extent:			1920 @ 1024
+				extent:			extent
 				trhFileTraits:	fileTraits
 				file:				storage / 'example'.
 		
 		surfaceExtender
-			surfaceDo:
-			[ :surface |
-				surface
-					drawDuring:
-					[ :canvas |
-						surface
-							clear:	Color black.
-
-						canvas pathTransform
-							scaleBy: 		0.5 * surfaceExtender extent;
-							translateBy: 	( 1 @ 1 ).
-						
-						canvas
-							draw:	self.
-					].			
-			].
+			surfaceDo:	draw.
 	]
 		value:	RHPDFTraits;
 		value:	RHSVGTraits.
+	
+	[
+		|
+			surface
+		|
+		
+		surface :=
+			AthensCairoSurface
+				extent:	extent.
+		
+		draw
+			value:	surface.
+		
+		surface
+			writeToPng: 	( storage / 'example.png' ) pathString.
+	] value.
 ]
 
 { #category : #drawing }
