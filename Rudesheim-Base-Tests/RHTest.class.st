@@ -6,7 +6,7 @@ Class {
 		'expectedValue',
 		'sourceValue'
 	],
-	#category : #'Rudesheim-Base-Tests'
+	#category : #'Rudesheim-Base-Tests-Base'
 }
 
 { #category : #accessing }
