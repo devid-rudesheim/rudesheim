@@ -19,49 +19,36 @@ RHExample class >> run [
 		widget openWithSpec
 			extent:	( 1 @ 1 ) * 800;
 			yourself.
-		
+	
 	widget
 		script:
 		[ :canvas |
+			|				
+				resource
+				track
+				clip
+				timeOfSeam
 			|
-				length
-				deltaForCircle
-				
-				cursorsInterval
-				cursors				
-			|
-			
+						
 			canvas  camera
 				scale: 0.5 * window extent max.
-
-			length := 200.
-			deltaForCircle :=  Float twoPi  /  length.
-
-			cursorsInterval :=
-				1
-					to: 8.
-
-			cursors :=
-				cursorsInterval
-					collect:
-					[ :each |
-
-						RSEllipse new
-							extent:		( 1 @ 1 ) * 0.25;
-							color:
-							(
-								Color
-									h:	( 360.0 / cursorsInterval size ) * each  
-									s:	0.5
-									l:	0.7
-							);
-
-							yourself.
-					].
 			
-			canvas
-				addAllShapes:	cursors.
+			resource :=
+				RHExampleResource new.
 			
+			track :=
+				LinkedList new
+					add:	RHClip new;
+					add:	RHSatelliteClip new;
+					add:	RHElasticitySatelliteClip new;
+					add:	RHSatelliteClip new;
+					add:	RHElasticitySatelliteClip new;
+					yourself.
+			
+			clip := track firstLink.
+			
+			timeOfSeam := clip duration.
+
 			canvas
 				addAnimation:
 				(
@@ -73,27 +60,37 @@ RHExample class >> run [
 						do:
 						[ :event |
 							|
-								baseRadius
-								radius
-								radian
-								tilt
-								deltaForInterval
+								arguments
 							|
-				
-							baseRadius  := ( 1 @ 1 ) * 0.8.
 							
-							deltaForInterval := length /  cursors size.
-							tilt := event currentLoop \\ length.
-							radius := baseRadius * ( deltaForCircle * tilt ) sin.
+							arguments :=
+								RHArgumentsForClip
+									rhExampleResource:		resource 
+									rsCanvas:					canvas 
+									rsAnimationLoopEvent: 	event.
 							
-							cursors
-								withIndexDo: 
-								[ :each :index |
-									radian  :=   ( ( deltaForInterval * index ) + tilt  ) * deltaForCircle.
-
-									each
-										position:	( radian cos @ radian sin )  * radius * (  ( deltaForCircle * tilt ) cos @ 1.0 ).
+							(
+								event currentLoop < timeOfSeam milliseconds
+							)
+								ifFalse:
+								[
+									clip
+										endDrawWith:		arguments.
+									
+									clip := clip nextLink
+										ifNil:
+										[
+											clip.
+										].
+									
+									timeOfSeam := clip duration + timeOfSeam.
+									
+									clip
+										beginDrawWith:	arguments.
 								].
+							
+							clip 
+								drawWith: 	arguments.
 						];
 						
 						onStepDo:
