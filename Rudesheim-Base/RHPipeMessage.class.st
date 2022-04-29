@@ -1,24 +1,14 @@
 Class {
 	#name : #RHPipeMessage,
 	#superclass : #RHPipeCommand,
+	#traits : 'TRHShouldntNew',
+	#classTraits : 'TRHShouldntNew classTrait',
 	#instVars : [
 		'target',
 		'selector'
 	],
 	#category : #'Rudesheim-Base-Pipe'
 }
-
-{ #category : #'instance creation' }
-RHPipeMessage class >> new [
-
-	self shouldNotImplement.
-]
-
-{ #category : #'instance creation' }
-RHPipeMessage class >> new: anInteger [
-
-	self shouldNotImplement.
-]
 
 { #category : #'instance creation' }
 RHPipeMessage class >> send: aSelectorSymbol

@@ -1,6 +1,8 @@
 Class {
 	#name : #RHTQIterator,
 	#superclass : #Object,
+	#traits : 'TRHShouldntNew',
+	#classTraits : 'TRHShouldntNew classTrait',
 	#instVars : [
 		'rows',
 		'loop'
@@ -14,18 +16,6 @@ RHTQIterator class >> fromCollections: aCollection [
 	^ super new
 			collections: aCollection.
 
-]
-
-{ #category : #'instance creation' }
-RHTQIterator class >> new [
-
-	self shouldNotImplement.
-]
-
-{ #category : #'instance creation' }
-RHTQIterator class >> new: anInteger [
-
-	self shouldNotImplement.
 ]
 
 { #category : #accessing }

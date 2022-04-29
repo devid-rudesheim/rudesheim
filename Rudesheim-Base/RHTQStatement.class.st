@@ -1,6 +1,8 @@
 Class {
 	#name : #RHTQStatement,
 	#superclass : #Object,
+	#traits : 'TRHShouldntNew',
+	#classTraits : 'TRHShouldntNew classTrait',
 	#instVars : [
 		'iterator',
 		'target',
@@ -8,18 +10,6 @@ Class {
 	],
 	#category : #'Rudesheim-Base-Table-Query'
 }
-
-{ #category : #'instance creation' }
-RHTQStatement class >> new [
-
-	self shouldNotImplement.
-]
-
-{ #category : #'instance creation' }
-RHTQStatement class >> new: anInteger [
-
-	self shouldNotImplement.
-]
 
 { #category : #'instance creation' }
 RHTQStatement class >> send:	aRHTQStatement

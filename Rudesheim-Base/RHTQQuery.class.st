@@ -1,6 +1,8 @@
 Class {
 	#name : #RHTQQuery,
 	#superclass : #Object,
+	#traits : 'TRHShouldntNew',
+	#classTraits : 'TRHShouldntNew classTrait',
 	#instVars : [
 		'iterator'
 	],
@@ -12,18 +14,6 @@ RHTQQuery class >> fromCollections: aCollection [
 
 	^ super new
 		collections: aCollection.
-]
-
-{ #category : #'instance creation' }
-RHTQQuery class >> new [
-
-	self shouldNotImplement.
-]
-
-{ #category : #'instance creation' }
-RHTQQuery class >> new: anInteger [
-
-	self shouldNotImplement.
 ]
 
 { #category : #evaluating }
