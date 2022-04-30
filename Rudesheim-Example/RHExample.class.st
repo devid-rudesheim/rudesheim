@@ -70,7 +70,7 @@ RHExample class >> run [
 									rsAnimationLoopEvent: 	event.
 							
 							(
-								event currentLoop < timeOfSeam milliseconds
+								event currentLoop < timeOfSeam asMilliSeconds
 							)
 								ifFalse:
 								[
