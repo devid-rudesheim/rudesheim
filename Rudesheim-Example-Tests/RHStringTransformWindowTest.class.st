@@ -39,7 +39,7 @@ RHStringTransformWindowTest >> runConnectPresenters0 [
 
 	self
 		assert:		actual
-		equals: 		self expectedValue.
+		equals: 		self actualValue.
 ]
 
 { #category : #tests }
@@ -64,7 +64,7 @@ RHStringTransformWindowTest >> runUpdateOutput0 [
 
 	self
 		assert:		self basicTarget textBoxForOutput text 
-		equals: 		self expectedValue.
+		equals: 		self actualValue.
 ]
 
 { #category : #tests }
@@ -82,7 +82,7 @@ RHStringTransformWindowTest >> testConnectPresenters [
 RHStringTransformWindowTest >> testConnectPresenters0_0 [
 
 	self
-		expectedValue:		1;
+		actualValue:		1;
 		sourceValue:		RHClickedTransform;
 		runConnectPresenters0.
 ]
@@ -91,7 +91,7 @@ RHStringTransformWindowTest >> testConnectPresenters0_0 [
 RHStringTransformWindowTest >> testConnectPresenters0_1 [
 
 	self
-		expectedValue:		0;
+		actualValue:		0;
 		sourceValue:		AnnouncementMockA;
 		runConnectPresenters0.
 ]
@@ -107,7 +107,7 @@ RHStringTransformWindowTest >> testInitializePresenters [
 RHStringTransformWindowTest >> testInitializePresenters0_0 [
 
 	self
-		expectedValue:		1;
+		actualValue:		1;
 		sourceValue:		RHClickedTransform;
 		runInitializePresenters0.
 ]
@@ -123,6 +123,6 @@ RHStringTransformWindowTest >> testUpdateOutput [
 RHStringTransformWindowTest >> testUpdateOutput0_0 [
 
 	self
-		expectedValue:		'1';
+		actualValue:		'1';
 		runUpdateOutput0.
 ]
