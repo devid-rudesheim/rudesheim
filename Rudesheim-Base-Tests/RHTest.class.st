@@ -3,8 +3,8 @@ Class {
 	#superclass : #TestCase,
 	#instVars : [
 		'basicTarget',
-		'expectedValue',
-		'sourceValue'
+		'sourceValue',
+		'actualValue'
 	],
 	#category : #'Rudesheim-Base-Tests-Base'
 }
@@ -13,6 +13,22 @@ Class {
 RHTest class >> targetClass [
 
 	^ self subclassResponsibility.
+]
+
+{ #category : #accessing }
+RHTest >> actualValue [
+
+	^ actualValue
+		ifNil:
+		[
+			actualValue :=  self defaultExpectedValue. 
+		]
+]
+
+{ #category : #accessing }
+RHTest >> actualValue: anObject [
+
+	actualValue := anObject
 ]
 
 { #category : #accessing }
@@ -49,27 +65,11 @@ RHTest >> defaultSourceValue [
 	^ 0
 ]
 
-{ #category : #accessing }
-RHTest >> expectedValue [
-
-	^ expectedValue
-		ifNil:
-		[
-			expectedValue :=  self defaultExpectedValue. 
-		]
-]
-
-{ #category : #accessing }
-RHTest >> expectedValue: anObject [
-
-	expectedValue := anObject
-]
-
 { #category : #running }
 RHTest >> setUp [
 
 	self
-		expectedValue: 		nil;
+		actualValue: 		nil;
 		sourceValue: 		nil;
 		basicTarget:		nil.
 ]

@@ -88,7 +88,7 @@ RHRangeTest >> runFirst0 [
 
 	self
 		assert: 	self basicTarget first
-		equals: 	self expectedValue.
+		equals: 	self actualValue.
 ]
 
 { #category : #tests }
@@ -130,7 +130,7 @@ RHRangeTest >> runLast0 [
 
 	self
 		assert: 	self basicTarget last
-		equals: 	self expectedValue.
+		equals: 	self actualValue.
 ]
 
 { #category : #running }
@@ -189,8 +189,8 @@ RHRangeTest >> testFirst [
 RHRangeTest >> testFirst0_0 [
 
 	self
-		expectedValue: 		1;
-		sourceFirst: 		self expectedValue;
+		actualValue: 		1;
+		sourceFirst: 		self actualValue;
 		sourceLast: 		2;
 		runFirst0.
 ]
@@ -242,7 +242,7 @@ RHRangeTest >> testLast [
 RHRangeTest >> testLast0_0 [
 
 	self
-		expectedValue:	1;
-		sourceLast: 	self expectedValue ;
+		actualValue:	1;
+		sourceLast: 	self actualValue ;
 		runLast0.
 ]
