@@ -103,7 +103,7 @@ RHRangeTest >> runFromTRHRange0 [
 	
 	self
 		assert:	self actualFirst
-		equals: 	target first;
+		equals: target first;
 		
 		assert:	self actualLast
 		equals: target last.
@@ -131,6 +131,28 @@ RHRangeTest >> runLast0 [
 	self
 		assert: 	self basicTarget last
 		equals: 	self actualValue.
+]
+
+{ #category : #tests }
+RHRangeTest >> runWithStep0 [
+	|
+		times
+	|
+	
+	times := 0.
+
+	(
+		self basicTarget
+			withStep:	1
+	)
+		do:
+		[ :each |
+			times := 1.
+		].
+	
+	self
+		assert: 	1
+		equals: 	times.
 ]
 
 { #category : #running }
@@ -245,4 +267,17 @@ RHRangeTest >> testLast0_0 [
 		actualValue:	1;
 		sourceLast: 	self actualValue ;
 		runLast0.
+]
+
+{ #category : #tests }
+RHRangeTest >> testWithStep [
+
+	self
+		testWithStep0_0.
+]
+
+{ #category : #tests }
+RHRangeTest >> testWithStep0_0 [
+
+	self runWithStep0.
 ]

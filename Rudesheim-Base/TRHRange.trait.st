@@ -14,3 +14,12 @@ TRHRange >> last [
 
 	^ self subclassResponsibility.
 ]
+
+{ #category : #devid }
+TRHRange >> withStep: anInteger [
+
+	^ Interval
+		from:	self first
+		to:		self last
+		by: 	anInteger.
+]
