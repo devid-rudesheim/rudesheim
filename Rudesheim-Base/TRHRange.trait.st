@@ -4,6 +4,12 @@ Trait {
 }
 
 { #category : #accessing }
+TRHRange classSide >> separator [
+
+	^ ' - '
+]
+
+{ #category : #accessing }
 TRHRange >> extent [
 
 	^ self last - self first.
@@ -19,6 +25,25 @@ TRHRange >> first [
 TRHRange >> last [
 
 	^ self subclassResponsibility.
+]
+
+{ #category : #printing }
+TRHRange >> printOn:	aWriteStream [
+	
+	self first
+		printOn:		aWriteStream.
+	
+	aWriteStream
+		nextPutAll:		self separator.
+
+	self last
+		printOn:		aWriteStream.
+]
+
+{ #category : #accessing }
+TRHRange >> separator [
+
+	^ self class separator.
 ]
 
 { #category : #accessing }

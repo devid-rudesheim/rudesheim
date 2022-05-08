@@ -145,6 +145,14 @@ RHRangeTest >> runLast0 [
 ]
 
 { #category : #tests }
+RHRangeTest >> runPrintOn0 [
+
+	self
+		assert: self basicTarget printString
+		equals: self actualValue.
+]
+
+{ #category : #tests }
 RHRangeTest >> runSize0 [
 
 	self
@@ -316,6 +324,36 @@ RHRangeTest >> testLast0_0 [
 		actualValue:	1;
 		sourceLast: 	self actualValue ;
 		runLast0.
+]
+
+{ #category : #tests }
+RHRangeTest >> testPrintOn [
+
+	self
+		testPrintOn0_0;
+		tearDown;
+		setUp;
+		testPrintOn0_1.
+]
+
+{ #category : #tests }
+RHRangeTest >> testPrintOn0_0 [
+
+	self
+		actualValue:  	'1 - 2';
+		sourceFirst: 	1;
+		sourceLast: 	2;
+		runPrintOn0.
+]
+
+{ #category : #tests }
+RHRangeTest >> testPrintOn0_1 [
+
+	self
+		actualValue:  	'3 - 4';
+		sourceFirst: 	3;
+		sourceLast: 	4;
+		runPrintOn0.
 ]
 
 { #category : #tests }
