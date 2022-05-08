@@ -87,6 +87,14 @@ RHRangeTest >> defaultSourceLast [
 ]
 
 { #category : #tests }
+RHRangeTest >> runExtent0 [
+
+	self
+		assert: self basicTarget extent
+		equals: self actualValue.
+]
+
+{ #category : #tests }
 RHRangeTest >> runFirst0 [
 
 	self
@@ -134,6 +142,14 @@ RHRangeTest >> runLast0 [
 	self
 		assert: 	self basicTarget last
 		equals: 	self actualValue.
+]
+
+{ #category : #tests }
+RHRangeTest >> runSize0 [
+
+	self
+		assert: self basicTarget size
+		equals: self actualValue.
 ]
 
 { #category : #tests }
@@ -204,6 +220,36 @@ RHRangeTest >> sourceLast: anObject [
 ]
 
 { #category : #tests }
+RHRangeTest >> testExtent [
+
+	self
+		testExtent0_0;
+		tearDown;
+		setUp;
+		testExtent0_1.
+]
+
+{ #category : #tests }
+RHRangeTest >> testExtent0_0 [
+
+	self
+		actualValue:  	1;
+		sourceFirst: 	1;
+		sourceLast: 	2;
+		runExtent0.
+]
+
+{ #category : #tests }
+RHRangeTest >> testExtent0_1 [
+
+	self
+		actualValue:  	2;
+		sourceFirst: 	1;
+		sourceLast: 	3;
+		runExtent0.
+]
+
+{ #category : #tests }
 RHRangeTest >> testFirst [
 
 	self
@@ -270,6 +316,36 @@ RHRangeTest >> testLast0_0 [
 		actualValue:	1;
 		sourceLast: 	self actualValue ;
 		runLast0.
+]
+
+{ #category : #tests }
+RHRangeTest >> testSize [
+
+	self
+		testSize0_0;
+		tearDown;
+		setUp;
+		testSize0_1.
+]
+
+{ #category : #tests }
+RHRangeTest >> testSize0_0 [
+
+	self
+		actualValue:  	1;
+		sourceFirst: 	1;
+		sourceLast: 	2;
+		runSize0.
+]
+
+{ #category : #tests }
+RHRangeTest >> testSize0_1 [
+
+	self
+		actualValue:  	2;
+		sourceFirst: 	1;
+		sourceLast: 	3;
+		runSize0.
 ]
 
 { #category : #tests }

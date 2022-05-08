@@ -4,6 +4,12 @@ Trait {
 }
 
 { #category : #accessing }
+TRHRange >> extent [
+
+	^ self last - self first.
+]
+
+{ #category : #accessing }
 TRHRange >> first [
 
 	^ self subclassResponsibility.
@@ -13,6 +19,12 @@ TRHRange >> first [
 TRHRange >> last [
 
 	^ self subclassResponsibility.
+]
+
+{ #category : #accessing }
+TRHRange >> size [
+
+	^ self extent
 ]
 
 { #category : #devid }
