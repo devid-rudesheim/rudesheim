@@ -189,7 +189,7 @@ RHRangeTest >> setUp [
 		setUp.
 
 	self
-		sourceFirst:		nil;
+		sourceFirst:	nil;
 		sourceLast: 	nil;
 		actualFirst:	nil;
 		actualLast: 	nil.
