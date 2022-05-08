@@ -1,21 +1,12 @@
 Class {
 	#name : #RHRange,
-	#superclass : #Object,
-	#traits : 'TRHRange + TRHShouldntNew',
-	#classTraits : 'TRHRange classTrait + TRHShouldntNew classTrait',
+	#superclass : #RHAbstractRange,
 	#instVars : [
 		'first',
 		'last'
 	],
 	#category : #'Rudesheim-Base-Collections'
 }
-
-{ #category : #'instance creation' }
-RHRange class >> fromTRHRange: aTRHRange [ 
-
-	^ super new
-		setTRHRange:	aTRHRange.
-]
 
 { #category : #accessing }
 RHRange >> first [

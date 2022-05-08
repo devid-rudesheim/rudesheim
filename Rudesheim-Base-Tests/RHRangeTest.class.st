@@ -3,7 +3,7 @@ A RHRangeTest is a test class for testing the behavior of RHRange
 "
 Class {
 	#name : #RHRangeTest,
-	#superclass : #TRHRangeTest,
+	#superclass : #RHAbstractRangeTest,
 	#category : #'Rudesheim-Base-Tests-Collections'
 }
 
@@ -11,17 +11,6 @@ Class {
 RHRangeTest class >> targetClass [
 
 	^ RHRange.
-]
-
-{ #category : #accessing }
-RHRangeTest >> defaultBasicTarget [
-
-	^ self targetClass
-		fromTRHRange:
-		{
-			self sourceFirst.
-			self sourceLast.
-		}
 ]
 
 { #category : #tests }
