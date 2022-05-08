@@ -11,15 +11,6 @@ Class {
 }
 
 { #category : #'instance creation' }
-RHRange class >> from: 	aFirstMagnitude
-to:		aLastMagnitude [
-	
-	^ super new
-		setFrom:	aFirstMagnitude
-		to:			aLastMagnitude.
-]
-
-{ #category : #'instance creation' }
 RHRange class >> fromTRHRange: aTRHRange [ 
 
 	^ super new
@@ -34,29 +25,22 @@ RHRange >> first [
 
 { #category : #accessing }
 RHRange >> last [
-	^ last
-]
 
-{ #category : #initialization }
-RHRange >> setFrom:	aFirstMagnitude
-to:			aLastMagnitude [ 
-	
-	aFirstMagnitude > aLastMagnitude
-		ifTrue:
-		[
-			first := aLastMagnitude.
-			last :=  aFirstMagnitude.
-			
-			^ self.
-		].
-	
-	first := aFirstMagnitude.
-	last := aLastMagnitude.
+	^ last
 ]
 
 { #category : #initialization }
 RHRange >> setTRHRange:	aTRHRange [ 
 
+	aTRHRange first > aTRHRange last
+		ifTrue:
+		[
+			first := aTRHRange last.
+			last :=  aTRHRange first.
+			
+			^ self.
+		].
+	
 	first := aTRHRange first.
 	last := aTRHRange last.
 ]

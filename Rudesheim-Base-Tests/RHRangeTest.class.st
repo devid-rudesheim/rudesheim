@@ -67,8 +67,11 @@ RHRangeTest >> defaultActualLast [
 RHRangeTest >> defaultBasicTarget [
 
 	^ self targetClass
-		from:	self sourceFirst
-		to:		self sourceLast. 
+		fromTRHRange:
+		{
+			self sourceFirst.
+			self sourceLast.
+		}
 ]
 
 { #category : #accessing }
@@ -246,7 +249,7 @@ RHRangeTest >> testFromTo [
 RHRangeTest >> testFromTo0_0 [
 
 	self
-		sourceFirst:		2;
+		sourceFirst:	2;
 		sourceLast: 	1;
 		actualFirst:	1;
 		actualLast: 	2;
