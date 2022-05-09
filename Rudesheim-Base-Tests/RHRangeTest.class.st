@@ -64,6 +64,28 @@ RHRangeTest >> runPrintOn0 [
 ]
 
 { #category : #tests }
+RHRangeTest >> runRangeIncludes0 [
+	
+	self
+		assert:
+		(
+			self basicTarget
+				rangeIncludes:	self sourceValue
+		).
+]
+
+{ #category : #tests }
+RHRangeTest >> runRangeIncludes1 [
+	
+	self
+		deny:
+		(
+			self basicTarget
+				rangeIncludes:	self sourceValue
+		).
+]
+
+{ #category : #tests }
 RHRangeTest >> runSize0 [
 
 	self
@@ -216,6 +238,63 @@ RHRangeTest >> testPrintOn0_1 [
 		sourceFirst: 	3;
 		sourceLast: 	4;
 		runPrintOn0.
+]
+
+{ #category : #tests }
+RHRangeTest >> testRangeIncludes [
+	
+	self
+		testRangeIncludes0_0;
+		tearDown;
+		setUp;
+		testRangeIncludes0_1;
+		tearDown;
+		setUp;
+		testRangeIncludes1_0;
+		tearDown;
+		setUp;
+		testRangeIncludes1_1.
+
+]
+
+{ #category : #tests }
+RHRangeTest >> testRangeIncludes0_0 [
+	
+	self
+		sourceValue:	1;
+		sourceFirst: 	1;
+		sourceLast:		2;
+		runRangeIncludes0.
+]
+
+{ #category : #tests }
+RHRangeTest >> testRangeIncludes0_1 [
+	
+	self
+		sourceValue:	1;
+		sourceFirst: 	1;
+		sourceLast:		2;
+		runRangeIncludes0.
+]
+
+{ #category : #tests }
+RHRangeTest >> testRangeIncludes1_0 [
+	
+	self
+		sourceValue:	0;
+		sourceFirst: 	1;
+		sourceLast:		2;
+		runRangeIncludes1.
+]
+
+{ #category : #tests }
+RHRangeTest >> testRangeIncludes1_1 [
+	
+	self
+		sourceValue:	3;
+		sourceFirst: 	1;
+		sourceLast:		2;
+		runRangeIncludes1.
 ]
 
 { #category : #tests }

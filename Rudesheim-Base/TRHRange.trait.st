@@ -40,6 +40,14 @@ TRHRange >> printOn:	aWriteStream [
 		printOn:		aWriteStream.
 ]
 
+{ #category : #testing }
+TRHRange >> rangeIncludes:	aNumber [
+	
+	^ aNumber
+		between:	self first
+		and:		self last
+]
+
 { #category : #accessing }
 TRHRange >> separator [
 
