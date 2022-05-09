@@ -1,8 +1,8 @@
 Class {
 	#name : #RHAbstractRange,
 	#superclass : #Object,
-	#traits : 'TRHRange + TRHShouldntNew',
-	#classTraits : 'TRHRange classTrait + TRHShouldntNew classTrait',
+	#traits : 'TRHBasicRange + TRHShouldntNew',
+	#classTraits : 'TRHBasicRange classTrait + TRHShouldntNew classTrait',
 	#category : #'Rudesheim-Base-Collections'
 }
 
