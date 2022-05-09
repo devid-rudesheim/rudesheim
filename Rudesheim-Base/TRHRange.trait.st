@@ -52,7 +52,7 @@ TRHRange >> size [
 	^ self extent
 ]
 
-{ #category : #devid }
+{ #category : #conversion }
 TRHRange >> withStep: anInteger [
 
 	^ Interval
