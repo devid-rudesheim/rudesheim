@@ -11,7 +11,7 @@ with:		aRHArgumentsForClip [
 		resource
 	|
 	
-	resource := aRHArgumentsForClip rhExampleResource.
+	resource := aRHArgumentsForClip rhaExampleResource.
 	
 	^ resource baseRadius * ( resource deltaForCircle * aNumber ) cos.
 ]

@@ -1,11 +1,11 @@
 Class {
-	#name : #RHExampleShape,
+	#name : #RHDExampleShape,
 	#superclass : #Object,
 	#category : #'Rudesheim-Example'
 }
 
 { #category : #drawing }
-RHExampleShape class >> draw [
+RHDExampleShape class >> draw [
 	< script >
 	|
 		storage
@@ -38,10 +38,10 @@ RHExampleShape class >> draw [
 
 	[ :fileTraits |
 		surfaceExtender :=
-			RHFileSurfaceExtender	
+			RHDFileSurfaceExtender	
 				extent:			extent
 				trhFileTraits:	fileTraits
-				file:				storage / 'example'.
+				file:			storage / 'example'.
 		
 		surfaceExtender
 			surfaceDo:	draw.
@@ -67,7 +67,7 @@ RHExampleShape class >> draw [
 ]
 
 { #category : #drawing }
-RHExampleShape class >> drawOnAthensCanvas:	anAthensCanvas [
+RHDExampleShape class >> drawOnAthensCanvas:	anAthensCanvas [
 	|
 		interval
 		delta
@@ -99,11 +99,11 @@ RHExampleShape class >> drawOnAthensCanvas:	anAthensCanvas [
 
 			vector := radian sin @ radian cos.
 			origin := 0.1 * vector.
-			orthogonal := vector  rightRotated.
+			orthogonal := vector rightRotated.
 		
 			offsets :=
 			{
-				{ 1.0 * vector. 0.5    * orthogonal }.
+				{ 1.0 * vector. 0.5  * orthogonal }.
 				{ 1.0 * vector. 0.25 * orthogonal }.
 				{ 2.0 * vector. 0.25 * orthogonal }.
 				{ 2.0 * vector. 0 @ 0 }
@@ -171,7 +171,7 @@ RHExampleShape class >> drawOnAthensCanvas:	anAthensCanvas [
 ]
 
 { #category : #drawing }
-RHExampleShape >> drawOnAthensCanvas:	anAthensCanvas [ 
+RHDExampleShape >> drawOnAthensCanvas:	anAthensCanvas [ 
 
 	self class 
 		drawOnAthensCanvas:	anAthensCanvas.

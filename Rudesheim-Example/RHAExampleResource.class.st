@@ -1,5 +1,5 @@
 Class {
-	#name : #RHExampleResource,
+	#name : #RHAExampleResource,
 	#superclass : #Object,
 	#instVars : [
 		'cursors'
@@ -8,13 +8,13 @@ Class {
 }
 
 { #category : #accessing }
-RHExampleResource >> baseRadius [ 
+RHAExampleResource >> baseRadius [ 
 
 	^ 0.8 * ( 1 @ 1 )
 ]
 
 { #category : #accessing }
-RHExampleResource >> cursors [
+RHAExampleResource >> cursors [
 
 	^ cursors
 		ifNil:
@@ -24,7 +24,7 @@ RHExampleResource >> cursors [
 ]
 
 { #category : #accessing }
-RHExampleResource >> defaultCursors [
+RHAExampleResource >> defaultCursors [
 	|
 		cursorsInterval
 	|
@@ -53,13 +53,13 @@ RHExampleResource >> defaultCursors [
 ]
 
 { #category : #accessing }
-RHExampleResource >> deltaForCircle [
+RHAExampleResource >> deltaForCircle [
 
 	^ Float twoPi  /  self length.
 ]
 
 { #category : #accessing }
-RHExampleResource >> length [
+RHAExampleResource >> length [
 
 	^ 200.
 ]

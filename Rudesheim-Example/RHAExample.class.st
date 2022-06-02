@@ -1,11 +1,11 @@
 Class {
-	#name : #RHExample,
+	#name : #RHAExample,
 	#superclass : #Object,
 	#category : #'Rudesheim-Example'
 }
 
 { #category : #accessing }
-RHExample class >> run [
+RHAExample class >> run [
 	< script >
 	|
 		widget
@@ -34,7 +34,7 @@ RHExample class >> run [
 				scale: 0.5 * window extent max.
 			
 			resource :=
-				RHExampleResource new.
+				RHAExampleResource new.
 			
 			track :=
 				LinkedList new
@@ -64,9 +64,9 @@ RHExample class >> run [
 							|
 							
 							arguments :=
-								RHArgumentsForClip
-									rhExampleResource:		resource 
-									rsCanvas:					canvas 
+								RHAArgumentsForClip
+									rhaExampleResource:		resource 
+									rsCanvas:				canvas 
 									rsAnimationLoopEvent: 	event.
 							
 							(

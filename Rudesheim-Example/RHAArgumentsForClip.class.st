@@ -1,5 +1,5 @@
 Class {
-	#name : #RHArgumentsForClip,
+	#name : #RHAArgumentsForClip,
 	#superclass : #Object,
 	#instVars : [
 		'rsCanvas',
@@ -10,49 +10,49 @@ Class {
 }
 
 { #category : #'instance creation' }
-RHArgumentsForClip class >> new [
+RHAArgumentsForClip class >> new [
 
 	self shouldNotImplement.
 ]
 
 { #category : #'instance creation' }
-RHArgumentsForClip class >> new:	anIndex [
+RHAArgumentsForClip class >> new:	anIndex [
 
 	self shouldNotImplement.
 ]
 
 { #category : #'instance creation' }
-RHArgumentsForClip class >> rhExampleResource:		aRHExampleResource
-rsCanvas:					aRSCanvas
-rsAnimationLoopEvent:		aRSAnimationLoopEvent [
+RHAArgumentsForClip class >> rhaExampleResource:		aRHExampleResource
+rsCanvas:				aRSCanvas
+rsAnimationLoopEvent:	aRSAnimationLoopEvent [
 
 	^ super new
-		setRHExampleResource:	aRHExampleResource
-		 rsCanvas:					aRSCanvas 
-		 rsAnimationLoopEvent: 	aRSAnimationLoopEvent.
+		setRHAExampleResource:	aRHExampleResource
+		rsaCanvas:				aRSCanvas 
+		rsAnimationLoopEvent: aRSAnimationLoopEvent.
 ]
 
 { #category : #accessing }
-RHArgumentsForClip >> rhExampleResource [
+RHAArgumentsForClip >> rhaExampleResource [
 
 	^ rhExampleResource
 ]
 
 { #category : #accessing }
-RHArgumentsForClip >> rsAnimationLoopEvent [
+RHAArgumentsForClip >> rsAnimationLoopEvent [
 
 	^ rsAnimationLoopEvent
 ]
 
 { #category : #accessing }
-RHArgumentsForClip >> rsCanvas [
+RHAArgumentsForClip >> rsCanvas [
 
 	^ rsCanvas
 ]
 
 { #category : #initialization }
-RHArgumentsForClip >> setRHExampleResource:	aRHExampleResource
-rsCanvas:					aRSCanvas
+RHAArgumentsForClip >> setRHAExampleResource:	aRHExampleResource
+rsaCanvas:					aRSCanvas
 rsAnimationLoopEvent:		aRSAnimationLoopEvent [
 	
 	rhExampleResource := aRHExampleResource.

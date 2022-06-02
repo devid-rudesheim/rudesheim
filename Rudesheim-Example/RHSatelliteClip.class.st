@@ -8,7 +8,7 @@ Class {
 RHSatelliteClip >> beginDrawWith:	aRHArgumentsForClip [
 	
 	aRHArgumentsForClip rsCanvas 
-		addAllShapes:	aRHArgumentsForClip rhExampleResource cursors.
+		addAllShapes:	aRHArgumentsForClip rhaExampleResource cursors.
 ]
 
 { #category : #drawing }
@@ -29,7 +29,7 @@ RHSatelliteClip >> drawWith:	aRHArgumentsForClip [
 		deltaForCircle
 	 |
 
-	resource := aRHArgumentsForClip rhExampleResource.
+	resource := aRHArgumentsForClip rhaExampleResource.
 	canvas := aRHArgumentsForClip rsCanvas.
 	event := aRHArgumentsForClip  rsAnimationLoopEvent.
 	
@@ -67,7 +67,7 @@ RHSatelliteClip >> duration [
 { #category : #seam }
 RHSatelliteClip >> endDrawWith:	aRHArgumentsForClip [
 	
-	aRHArgumentsForClip rhExampleResource  cursors
+	aRHArgumentsForClip rhaExampleResource  cursors
 		do:
 		[ :each |
 			each remove.
@@ -78,11 +78,11 @@ RHSatelliteClip >> endDrawWith:	aRHArgumentsForClip [
 RHSatelliteClip >> radiusFor:	aNumber
 with:		aRHArgumentsForClip [
 	
-	^ aRHArgumentsForClip rhExampleResource  baseRadius.
+	^ aRHArgumentsForClip rhaExampleResource  baseRadius.
 ]
 
 { #category : #effects }
 RHSatelliteClip >> radiusWith:	aRHArgumentsForClip [
 	
-	^ aRHArgumentsForClip rhExampleResource  baseRadius.
+	^ aRHArgumentsForClip rhaExampleResource  baseRadius.
 ]
