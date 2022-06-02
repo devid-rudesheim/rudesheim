@@ -1,5 +1,5 @@
 Class {
-	#name : #RHFileSurfaceExtender,
+	#name : #RHDFileSurfaceExtender,
 	#superclass : #Object,
 	#instVars : [
 		'extent',
@@ -10,36 +10,36 @@ Class {
 }
 
 { #category : #'instance creation' }
-RHFileSurfaceExtender class >> extent:			aPoint
+RHDFileSurfaceExtender class >> extent:			aPoint
 trhFileTraits:	aTRHFileTraits
 file:				anAbstractFileReference [
 
 	^ super new
 		setExtent:		aPoint
 		trhFileTraits:	aTRHFileTraits
-		file:				anAbstractFileReference.
+		file:			anAbstractFileReference.
 ]
 
 { #category : #'instance creation' }
-RHFileSurfaceExtender class >> new [
+RHDFileSurfaceExtender class >> new [
 
 	^ self shouldNotImplement.
 ]
 
 { #category : #accessing }
-RHFileSurfaceExtender >> extent [
+RHDFileSurfaceExtender >> extent [
 
 	^ extent
 ]
 
 { #category : #accessing }
-RHFileSurfaceExtender >> file [
+RHDFileSurfaceExtender >> file [
 
 	^ file
 ]
 
 { #category : #initialization }
-RHFileSurfaceExtender >> setExtent:		aPoint
+RHDFileSurfaceExtender >> setExtent:		aPoint
 trhFileTraits:	aTRHFileTraits
 file:				anAbstractFileReference [
 
@@ -49,27 +49,18 @@ file:				anAbstractFileReference [
 ]
 
 { #category : #enumerating }
-RHFileSurfaceExtender >> surfaceDo: aBlock [
-	|
-		surface
-	|
-	
-	surface :=
+RHDFileSurfaceExtender >> surfaceDo: aBlock [
+
+	(
 		trhFileTraits trhFileSurfaceProvider
 			extent:		self extent
-			fileName:	self file pathString, '.', self trhFileTraits  extention.
-	[
-		aBlock
-			value:	surface.
-	]
-		ensure:
-		[
-			surface close.
-		].
+			fileName:	self file pathString, '.', self trhFileTraits extention
+	) intoRHScope
+		do:	aBlock.
 ]
 
 { #category : #accessing }
-RHFileSurfaceExtender >> trhFileTraits [
+RHDFileSurfaceExtender >> trhFileTraits [
 
 	^ trhFileTraits
 ]
