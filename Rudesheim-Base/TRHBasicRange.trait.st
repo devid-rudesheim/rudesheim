@@ -6,6 +6,12 @@ Trait {
 }
 
 { #category : #accessing }
+TRHBasicRange classSide >> intervalSpecies [
+
+	^ Interval.
+]
+
+{ #category : #accessing }
 TRHBasicRange classSide >> separator [
 
 	^ ' - '
@@ -53,7 +59,7 @@ TRHBasicRange >> size [
 { #category : #conversion }
 TRHBasicRange >> withStep: anInteger [
 
-	^ Interval
+	^ self class intervalSpecies
 		from:	self first
 		to:		self last
 		by: 	anInteger.
