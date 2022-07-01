@@ -1,23 +1,13 @@
 Class {
 	#name : #RHPipe,
 	#superclass : #Object,
+	#traits : 'TRHShouldntNew',
+	#classTraits : 'TRHShouldntNew classTrait',
 	#instVars : [
 		'commands'
 	],
 	#category : #'Rudesheim-Base-Pipe'
 }
-
-{ #category : #'instance creation' }
-RHPipe class >> new [
-
-	self shouldNotImplement.
-]
-
-{ #category : #'instance creation' }
-RHPipe class >> new: anInteger [
-
-	self shouldNotImplement.
-]
 
 { #category : #'instance creation' }
 RHPipe class >> withPipeCommands: aSequencialCollection [
