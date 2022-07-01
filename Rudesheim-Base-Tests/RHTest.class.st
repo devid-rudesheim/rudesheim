@@ -92,7 +92,7 @@ RHTest >> sourceValue: anObject [
 
 { #category : #accessing }
 RHTest >> targetClass [
-	
+
 	^ self class targetClass.
 ]
 

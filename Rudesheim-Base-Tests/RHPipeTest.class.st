@@ -54,7 +54,7 @@ RHPipeTest >> testWriteStreamDoReadStreamDo0 [
 		expecteds
 	|
 	
-	expecteds  :=
+	expecteds :=
 		1
 			to: 3.
 	
@@ -123,7 +123,7 @@ RHPipeTest >> testWriteStreamDoReadStreamDo2 [
 		expecteds
 	|
 	
-	expecteds  :=
+	expecteds :=
 		1
 			to: 3.
 	
