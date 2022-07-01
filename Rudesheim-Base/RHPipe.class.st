@@ -77,6 +77,7 @@ readStreamDo: aReadingBlock [
 			].
 	] fork.
 
+	^
 	[
 		aReadingBlock
 			value: pipeStreams stdin.

@@ -42,7 +42,10 @@ RHPipeTest >> testWriteStreamDoReadStreamDo [
 		testWriteStreamDoReadStreamDo2;
 		tearDown;
 		setUp;
-		testWriteStreamDoReadStreamDo3.
+		testWriteStreamDoReadStreamDo3;
+		tearDown;
+		setUp;
+		testWriteStreamDoReadStreamDo4.
 ]
 
 { #category : #tests }
@@ -207,4 +210,36 @@ RHPipeTest >> testWriteStreamDoReadStreamDo3 [
 						equals: each.
 				].
 		].
+]
+
+{ #category : #tests }
+RHPipeTest >> testWriteStreamDoReadStreamDo4 [
+	|
+		actual
+	|
+	
+	actual := 1.
+	
+	self
+		assert:	actual
+		equals:
+		(
+			(
+				self targetClass
+					withPipeCommands:
+					{
+						RHPipeEcho.
+					}
+			)
+				writeStreamDo:
+				[ :stream |
+					stream 
+						nextPut: actual.
+				]
+				readStreamDo:
+				[ :stream |
+					stream next.
+				]
+		)
+
 ]
