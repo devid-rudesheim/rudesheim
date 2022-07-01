@@ -116,6 +116,52 @@ RHRangeTest >> runWithStep0 [
 ]
 
 { #category : #tests }
+RHRangeTest >> testEqualsSign [
+
+	self
+		testEqualsSign0_0;
+		tearDown;
+		setUp;
+		testEqualsSign1_0.
+]
+
+{ #category : #tests }
+RHRangeTest >> testEqualsSign0_0 [
+
+	self
+		sourceFirst: 	1;
+		sourceLast: 	2;
+		actualValue:
+		(
+			self targetClass
+				fromTRHRange:
+				#(
+					1
+					2
+				)
+		);
+		runEqualsSign0.
+]
+
+{ #category : #tests }
+RHRangeTest >> testEqualsSign1_0 [
+
+	self
+		sourceFirst: 	2;
+		sourceLast: 	3;
+		actualValue:
+		(
+			self targetClass
+				fromTRHRange:
+				#(
+					1
+					2
+				)
+		);
+		runEqualsSign1.
+]
+
+{ #category : #tests }
 RHRangeTest >> testExtent [
 
 	self
@@ -192,6 +238,52 @@ RHRangeTest >> testFromTRHRange1_0 [
 		actualLast:		2;
 		sourceLast: 	self actualLast;
 		runFromTRHRange1.
+]
+
+{ #category : #tests }
+RHRangeTest >> testHash [
+
+	self
+		testHash0_0;
+		tearDown;
+		setUp;
+		testHash1_0.
+]
+
+{ #category : #tests }
+RHRangeTest >> testHash0_0 [
+
+	self
+		sourceFirst: 	1;
+		sourceLast: 	2;
+		actualValue:
+		(
+			self targetClass
+				fromTRHRange:
+				#(
+					1
+					2
+				)
+		);
+		runHash0.
+]
+
+{ #category : #tests }
+RHRangeTest >> testHash1_0 [
+
+	self
+		sourceFirst: 	2;
+		sourceLast: 	3;
+		actualValue:
+		(
+			self targetClass
+				fromTRHRange:
+				#(
+					1
+					2
+				)
+		);
+		runHash1.
 ]
 
 { #category : #tests }

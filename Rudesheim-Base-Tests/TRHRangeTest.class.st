@@ -67,11 +67,43 @@ TRHRangeTest >> defaultSourceLast [
 ]
 
 { #category : #tests }
+TRHRangeTest >> runEqualsSign0 [
+
+	self
+		assert:	self actualValue 
+		equals:	self basicTarget.
+]
+
+{ #category : #tests }
+TRHRangeTest >> runEqualsSign1 [
+
+	self
+		deny:	self actualValue
+		equals:	self basicTarget.
+]
+
+{ #category : #tests }
 TRHRangeTest >> runFirst0 [
 
 	self
 		assert: 	self basicTarget first
 		equals: 	self actualValue.
+]
+
+{ #category : #tests }
+TRHRangeTest >> runHash0 [
+
+	self
+		assert: self actualValue hash
+		equals: self basicTarget hash.
+]
+
+{ #category : #tests }
+TRHRangeTest >> runHash1 [
+
+	self
+		deny: 	self actualValue hash
+		equals:	self basicTarget hash.
 ]
 
 { #category : #tests }
