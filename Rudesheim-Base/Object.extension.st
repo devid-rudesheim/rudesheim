@@ -3,6 +3,6 @@ Extension { #name : #Object }
 { #category : #'*Rudesheim-Base' }
 Object >> intoRHScope [
 
-	^ RHScopeForStream
+	^ ScopeForStreamRudesheim
 		on:	self.
 ]
